@@ -17,19 +17,18 @@ def start_node_server():
         
     env = os.environ.copy()
     env['NODE_ENV'] = 'development'
-    env['NODE_PORT'] = str(NODE_PORT)
+    env['PORT'] = str(NODE_PORT)
     
     print(f"Starting Node.js server on port {NODE_PORT}...", flush=True)
     node_process = subprocess.Popen(
         ['node', 'server/index.js'],
         env=env,
-        cwd=os.path.dirname(os.path.abspath(__file__)),
         stdout=sys.stdout,
         stderr=sys.stderr
     )
     
     import time
-    time.sleep(2)
+    time.sleep(3)
     
     return node_process
 
@@ -84,11 +83,3 @@ def proxy(path):
         return Response('Node.js server is starting, please refresh in a moment...', 503)
     except Exception as e:
         return Response(f'Proxy error: {str(e)}', 500)
-
-if __name__ == '__main__':
-    start_node_server()
-    try:
-        node_process.wait()
-    except KeyboardInterrupt:
-        cleanup()
-        sys.exit(0)
