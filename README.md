@@ -1,4 +1,4 @@
-# React + Express Application
+# Uttarakhand Disaster Early Warning System
 
 A full-stack web application built with React and Express.js, featuring a modern UI with Tailwind CSS and shadcn/ui components.
 
