@@ -32,6 +32,12 @@ export default function Header({ onMenuClick }) {
           >
             <Menu className="w-5 h-5" />
           </Button>
+          <img 
+            src="/favicon.png" 
+            alt="Uttarakhand Disaster Warning Logo" 
+            className="h-10 w-10"
+            data-testid="img-logo"
+          />
           <div>
             <h1 className="text-lg font-semibold" data-testid="text-title">
               Uttarakhand Disaster Alert
