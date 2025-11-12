@@ -18,11 +18,17 @@ export async function fetchRoutes() {
   return response.json();
 }
 
+// Alias for Dashboard component
+export const fetchPilgrimageRoutes = fetchRoutes;
+
 export async function fetchReports() {
   const response = await fetch(`${API_BASE_URL}/reports`);
   if (!response.ok) throw new Error('Failed to fetch reports');
   return response.json();
 }
+
+// Alias for Dashboard component
+export const fetchCommunityReports = fetchReports;
 
 export async function fetchOverallRisk() {
   const response = await fetch(`${API_BASE_URL}/overall-risk`);
